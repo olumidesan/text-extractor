@@ -7,13 +7,15 @@ import os
 import time
 
 import cv2
+import platform
 import pyperclip
 import pytesseract
 import numpy as np
 import pyautogui as gui
 
 
-pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files (x86)\Tesseract-OCR\tesseract.exe"
+if platform.platform().startswith('Windows'): 
+    pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files (x86)\Tesseract-OCR\tesseract.exe"
 
 gui.FAILSAFE = False # disable pyautogui's failsafe exception
 num = 0 # counter for mapping mouse clicks to positions
