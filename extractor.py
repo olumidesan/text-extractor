@@ -1,13 +1,14 @@
 
 from pynput.mouse import Listener
 from pytesseract import image_to_string
-from PIL import Image 
+from PIL import Image
 
 import os
 import time
+import atexit
+import platform
 
 import cv2
-import platform
 import pyperclip
 import pytesseract
 import numpy as np
@@ -19,7 +20,9 @@ if platform.system() == 'Windows':
     pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files (x86)\Tesseract-OCR\tesseract.exe"
 
 gui.FAILSAFE = False # disable pyautogui's failsafe exception
+
 num = 0 # counter for mapping mouse clicks to positions
+pictures = None
 
 save_location = os.path.abspath(os.path.dirname(__file__))
 
@@ -76,6 +79,8 @@ def imageCreator(left, top, width, height):
 def textExtractor(img):
     """Extracts the text from the image"""
 
+    global pictures
+
     image = cv2.imread(img)
     image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
@@ -83,20 +88,20 @@ def textExtractor(img):
     kernel = np.ones((1, 1), np.uint8)
     image = cv2.erode(image, kernel, iterations = 1)
     image = cv2.dilate(image, kernel, iterations = 1)
-    
+
     image_path = os.path.join(save_location, "image_" + time.strftime("%H%M%S") + ".png")
     cv2.imwrite(image_path, image)
-    
-    result = pytesseract.image_to_string(Image.open(image_path))
-    
-    return result
 
+    result = pytesseract.image_to_string(Image.open(image_path))
+    pictures = (img, image_path)
+
+    return result
 
 def main():
     """Main application"""
 
     # Minimize the terminal immediately so it won't obstruct screenshot selection. (Tested only on Ubuntu 16.04)
-    gui.hotkey('altleft', 'space'); gui.press('n') 
+    gui.hotkey('altleft', 'space'); gui.press('n')
 
     positions = ['top left', 'top right', 'bottom left', 'bottom right']
     for i in positions:
@@ -109,9 +114,15 @@ def main():
     gui.hotkey('altleft', 'tab') # return the terminal
 
     image_text = textExtractor(image) # extract the text from the image
-    
-    pyperclip.copy(image_text)
-    print('\nText in image is: ', image_text) # print the extracted text
-        
+
+    pyperclip.copy(image_text) # copy image to clipboard
+    print(f'\nText in image is: {image_text}') # print the extracted text
+
+@atexit.register
+def cleanup():
+    """Delete the screenshots when the program exits"""
+
+    for i in pictures: os.remove(i)
+
 if __name__ == '__main__':
     main()
