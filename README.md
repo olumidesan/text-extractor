@@ -1,4 +1,4 @@
-# Immediately capture text from a region of interest screenshot
+# Immediately extract text from a region of interest screenshot
 
 Sequel to my [area-screenshot](https://github.com/oluminous/area-screenshot) project.
 
@@ -15,7 +15,7 @@ Sequel to my [area-screenshot](https://github.com/oluminous/area-screenshot) pro
 ## How to Use
   1. Start the script: ```python extractor.py```
   2. As explained in [area-screenshot](https://github.com/oluminous/area-screenshot), click the edges of the intended screenshot.
-  3. The text in the screenshot will be displayed on the terminal.
+  3. The text in the screenshot will be displayed on the terminal and also copied to your clipboard.
 
 ## Example
 
