@@ -4,6 +4,7 @@ Sequel to my [area-screenshot](https://github.com/oluminous/area-screenshot) pro
 
 ## Requirements
   - Python 3+
+  - [Tesseract](https://github.com/tesseract-ocr/tesseract/wiki)
   - Packages in the requirements.txt file: ```pip install -r requirements.txt```
   
     On Linux, ```pyautogui``` has some extra dependencies. Simply run the following commands from the terminal to install them:
