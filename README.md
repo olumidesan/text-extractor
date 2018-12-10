@@ -1,6 +1,6 @@
 # Immediately extract text from a region of interest screenshot
 
-Sequel to my [area-screenshot](https://github.com/oluminous/area-screenshot) project.
+Sequel to my [area-screenshot](https://github.com/oluminous/area-screenshot) project. Was finally able to do [this](https://twitter.com/_Olums/status/1066411959950692353) on my laptop. 
 
 ## Requirements
   - Python 3+
@@ -18,6 +18,7 @@ Sequel to my [area-screenshot](https://github.com/oluminous/area-screenshot) pro
   3. The text in the screenshot will be displayed on the terminal and also copied to your clipboard.
 
 ## Example
+![](usage.gif)
 
  
 
