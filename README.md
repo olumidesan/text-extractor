@@ -4,7 +4,7 @@ Sequel to my [area-screenshot](https://github.com/oluminous/area-screenshot) pro
 
 ## Requirements
   - Python 3+
-  - ```pip install -r requirements.txt```
+  - Packages in the ```requirements.txt``` file. ```pip install -r requirements.txt```
   
     On Linux, ```pyautogui``` has some extra dependencies. Simply run the following commands from the terminal to install them:
     ```sudo pip3 install python3-xlib```, 
