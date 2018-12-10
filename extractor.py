@@ -14,7 +14,8 @@ import numpy as np
 import pyautogui as gui
 
 
-if platform.platform().startswith('Windows'): 
+if platform.system() == 'Windows':
+    # It is assumed that Tesseract was installed in Program Files.
     pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files (x86)\Tesseract-OCR\tesseract.exe"
 
 gui.FAILSAFE = False # disable pyautogui's failsafe exception
