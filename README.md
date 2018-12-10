@@ -1,4 +1,4 @@
-# text_extractor: Immediately capture text from a region of interest screenshot
+# Immediately capture text from a region of interest screenshot
 
 Sequel to my [area-screenshot](https://github.com/oluminous/area-screenshot) project.
 
