@@ -3,7 +3,7 @@
 Sequel to my [area-screenshot](https://github.com/oluminous/area-screenshot) project. Was finally able to do [this](https://twitter.com/_Olums/status/1066411959950692353) on my laptop. 
 
 ## Requirements
-  - Python 3+
+  - Python 3.6+
   - [Tesseract](https://github.com/tesseract-ocr/tesseract/wiki)
   - Packages in the requirements.txt file: ```pip install -r requirements.txt```
   
