@@ -109,7 +109,8 @@ def main():
     gui.hotkey('altleft', 'tab') # return the terminal
 
     image_text = textExtractor(image) # extract the text from the image
-
+    
+    pyperclip.copy(image_text)
     print('\nText in image is: ', image_text) # print the extracted text
         
 if __name__ == '__main__':
