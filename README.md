@@ -1,6 +1,6 @@
 # Immediately extract text from a region of interest screenshot
 
-Sequel to my [area-screenshot](https://github.com/oluminous/area-screenshot) project. Was finally able to do [this](https://twitter.com/_Olums/status/1066411959950692353) on my laptop. 
+Sequel to my [roi-screenshot](https://github.com/oluminous/roi-screenshot) project. Was finally able to do [this](https://twitter.com/_Olums/status/1066411959950692353) with my laptop. 
 
 ## Requirements
   - Python 3.6+
@@ -15,7 +15,7 @@ Sequel to my [area-screenshot](https://github.com/oluminous/area-screenshot) pro
   
 ## How to Use
   1. Execute the script: ```python extractor.py```
-  2. As explained in [area-screenshot](https://github.com/oluminous/area-screenshot), click the edges of the intended screenshot.
+  2. As explained in [roi-screenshot](https://github.com/oluminous/roi-screenshot), click the edges of the intended screenshot.
   3. The text in the screenshot will be displayed on the terminal and also copied to your clipboard.
 
 ## Example
